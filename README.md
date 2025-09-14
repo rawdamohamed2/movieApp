@@ -1,12 +1,42 @@
-# React + Vite
+# CineHub App (Movie App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A movie and TV browsing application built with **React + Vite**.  
+Includes authentication, search, filtering, actor profiles, and responsive UI.  
+Powered by **The Movie Database (TMDb) API** with links to **IMDb**.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- **Authentication with JWT**
+  - User login and register
+  - Token saved in localStorage
+  - **jwt-decode** used to extract profile info from token
+- **Profile Page**
+  - User data decoded from token
+- **Movies & TV**
+  - Browse popular movies and TV shows
+  - Search across both movies and TV
+  - Filter and sort by:
+    - Popularity
+    - Release/air date
+    - Rating
+    - Title (A–Z / Z–A)
+- **Actors / Cast**
+  - View actor profile
+  - Fetch filmography (movies and TV works)
+  - Each actor/movie page includes link to **IMDb profile**
+- **Form Validation**
+  - Implemented with **Joi**
+- **Routing**
+  - Client-side routing using **React Router**
+  - Protected routes for authenticated users
+- **State Management**
+  - **React Context API** for global state
+- **Responsive UI**
+  - Built with **react-responsive** and **Tailwind CSS**
+- **API Integration**
+  - Data fetched from **TMDb API** with **Axios**
+  - IMDb IDs used to provide external links for movies, TV shows, and actors
+- **Custom Hooks**
+  - Encapsulate reusable logic
+    
+##  Live Demo
+[Click here to try the app](cinehub-movieapp.netlify.app)
