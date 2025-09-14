@@ -39,4 +39,4 @@ Powered by **The Movie Database (TMDb) API** with links to **IMDb**.
   - Encapsulate reusable logic
     
 ##  Live Demo
-[Click here to try the app](cinehub-movieapp.netlify.app)
+[Click here to try the app](https://cinehub-movieapp.netlify.app)
