@@ -26,11 +26,6 @@ export default function Search() {
     setQuery(inputValue.trim());
   }
 
-  function handleClear() {
-    setInputValue("");
-    setQuery("");
-  }
-
   return (
     <div className="lg:w-[350px] md:max-w-[350px] w-full relative">
       <form onSubmit={handleSubmit}>

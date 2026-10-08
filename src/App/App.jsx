@@ -3,7 +3,7 @@ import Login from "../pages/Login/Login.jsx";
 import Register from "../pages/Register/Register.jsx";
 import Home from "../pages/home/HomePage.jsx";
 import Tv from "../pages/tv/TvPage.jsx";
-import Movies from "../pages/Movies/MoviesPage.jsx";
+import Movies from "../pages/movies/MoviesPage.jsx";
 import Layout from "../Components/Layout/Layout.jsx";
 import People from "../pages/people/PeoplePage.jsx";
 import ItemDetails from "../pages/itemDetails/ItemDetailsPage.jsx";

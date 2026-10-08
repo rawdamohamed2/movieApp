@@ -1,6 +1,5 @@
-import { createContext, useContext, useLayoutEffect, useState } from "react";
+import { createContext, useLayoutEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext("");
 
