@@ -7,7 +7,7 @@ export default function SearchItem({ item, itemsLoading, setQuery }) {
   return (
     <Link
       onClick={() => setQuery("")}
-      to={`/itemdetails/${item.id}/${item.media_type}`}
+      to={`/item-details/${item.id}/${item.media_type}`}
       className="w-full flex items-center gap-2 bg-secondbg p-2 rounded-md hover:scale-102 transition-all duration-300 ease-in-out"
     >
       <img

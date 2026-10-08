@@ -1,9 +1,8 @@
 import React from "react";
-import CastItem from "../../Cast/CastItem";
+import CastItem from "../../CastItem.jsx";
 import { toHoursAndMinutes } from "../../../../utils/Time";
 
 export default function DetailsItem({ items, cast, castloading }) {
-
   return (
     <>
       <h1 className="md:text-3xl text-2xl font-bold ">

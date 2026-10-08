@@ -1,28 +1,32 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+
+const getData = async (url) => {
+  const response = await axios.get(url, {
+    params: {
+      api_key: API_KEY,
+      language: "en-US",
+      page: 1,
+    },
+  });
+
+  return response.data.results ?? response.data;
+};
 
 function useApi(url) {
-  let [item, setItem] = useState([]);
-  let [loading, setLoading] = useState(true);
-  let [error, setError] = useState("");
-  async function getData() {
-    try {
-      let response = await axios.get(url);
-      // console.log(response.data);
-      response.data.results
-        ? setItem(response.data.results)
-        : setItem(response.data);
-    } catch (error) {
-      setError(error?.message || error || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  }
-  useEffect(() => {
-    setLoading(true);
-    getData();
-  }, [url]);
+  const { data, error, isPending, isLoading } = useQuery({
+    queryKey: ["data", url],
+    queryFn: () => getData(url),
+    enabled: Boolean(url),
+  });
 
-  return { item, loading, error };
+  return {
+    data,
+    error,
+    isPending,
+    isLoading,
+  };
 }
+
 export default useApi;

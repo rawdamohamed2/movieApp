@@ -1,29 +1,27 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+
+const API_KEY = import.meta.env("API_KEY");
+
+const search = async (query) => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/search/collection`,
+    {
+      params: {
+        api_key: API_KEY,
+        language: "en-US",
+        query: query,
+        page: 1,
+      },
+    },
+  );
+  return response.data.results ? response.data.results : response.data;
+};
 
 function useSearch(query) {
-  let [item, setItem] = useState({});
-  let [loading, setLoading] = useState(true);
-  async function getData() {
-    try {
-      let response = await axios.get(
-        `https://api.themoviedb.org/3/search/collection?api_key=01672aea203f4a08b7d92c56e3461b0e&query=${query}&language=en-US&page=1`
-      );
-
-      response.data.results
-        ? setItem(response.data.results)
-        : setItem(response.data);
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-  useEffect(() => {
-    setLoading(true);
-    getData();
-  }, [query]);
-
-  return { item, loading };
+  return useQuery({
+    queryKey: ["query", query],
+    query: search,
+  });
 }
 export default useSearch;

@@ -3,94 +3,100 @@
 @tailwind utilities;
 
 * {
-  scrollbar-width: thin;       
-  scrollbar-color: #18aedcff #0D0D0D; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #18aedcff #0d0d0d;
 }
 ::-webkit-scrollbar {
-  width: 4px;  
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-background;  
+  @apply bg-background;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-button rounded-sm ;
+  @apply bg-button rounded-sm;
 }
 
-
-
-body{
-  font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #FFFFFF;
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+html {
+  scroll-behavior: smooth;
 }
-.container{
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.container {
   width: 90%;
   /* margin-inline: auto; */
 }
-input:focus{
-    border: none;
-    outline: 2px solid #1CC1F5;
-    box-shadow: 0px 0px 7px #1cc2f5e3,
+input:focus {
+  border: none;
+  outline: 2px solid #1cc1f5;
+  box-shadow: 0px 0px 7px #1cc2f5e3;
 }
-input{
-  box-shadow:0px 0px 5px #1cc2f59c;
+input {
+  box-shadow: 0px 0px 5px #1cc2f59c;
 }
-
 
 .mobileMenu.show {
   visibility: visible;
 }
-.hiddenclass{
+.hiddenclass {
   visibility: hidden;
 }
 
-.start{
+.start {
   margin-top: 10px;
 }
 
- .page.active{
-  background-color: #1CC1F5;
- }
- 
- .btn{
+.page.active {
+  background-color: #1cc1f5;
+}
+
+.btn {
   @apply block text-center lg:w-full w-1/2 lg:mx-0 mx-auto  bg-button px-4 py-2 rounded-xl mt-1 mb-2 hover:bg-input hover:text-active transition-all duration-300 ease-in-out;
- }
-.btn2{
+}
+.btn2 {
   @apply block text-center w-full border border-button px-4 py-2 rounded-full mt-1 mb-2 hover:border-border hover:text-active transition-all duration-300 ease-in-out;
- }
- .disabledbtn{
-  @apply block text-center w-full border border-button px-4 py-2 rounded-full mt-1 mb-2 ;
- }
-.buttonOutW{
+}
+.disabledbtn {
+  @apply block text-center w-full border border-button px-4 py-2 rounded-full mt-1 mb-2;
+}
+.buttonOutW {
   @apply block text-center w-fit border border-button px-4 py-2 rounded-full mt-1 mb-2 hover:border-border hover:text-active transition-all duration-300 ease-in-out;
- }
-.layer{
+}
+.layer {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.movie:hover .layer{
+.movie:hover .layer {
   opacity: 1;
 }
-.btn.active{@apply text-active bg-input border border-active}
-.after{
+.btn.active {
+  @apply text-active bg-input border border-active;
+}
+.after {
   @apply after:content-[''] after:block after:w-[90%] after:mx-auto  after:h-[3px] after:bg-active after:mt-2;
 }
-.before{
+.before {
   @apply before:content-[''] before:block before:w-[75%] before:h-[3px] before:bg-active before:mt-2;
 }
-.overlay{
+.overlay {
   visibility: hidden;
   transition: transform 8s ease-in-out;
 }
-.personImage:hover .overlay{
+.personImage:hover .overlay {
   visibility: visible;
 }
-.title{
+.title {
   @apply text-center text-font font-bold text-[1.8rem];
 }
-.profile{
-  @apply  w-[500px] rounded-xl bg-background py-5 px-5;
+.profile {
+  @apply w-[500px] rounded-xl bg-background py-5 px-5;
 }

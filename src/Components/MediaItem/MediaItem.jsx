@@ -7,7 +7,7 @@ export default function MediaItem({ item }) {
   return (
     <div className="movie col-span-1 relative hover:scale-105 transition-all duration-300 ease-in-out md:px-0 rounded-lg bg-background flex flex-col">
       <Link
-        to={`/itemdetails/${item.id}/${type}`}
+        to={`/item-details/${item.id}/${type}`}
         className="flex flex-col flex-1 "
       >
         <img
